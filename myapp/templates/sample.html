@@ -1,0 +1,281 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Free Bootstrap Themes by Zerotheme dot com - Free Responsive Html5 Templates">
+    <meta name="author" content="https://www.Zerotheme.com">
+
+    <title>Dappers</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css'%}"  type="text/css">
+
+	<!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+
+
+	<!-- Custom Fonts -->
+    <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css'%}"  type="text/css">
+    <link rel="stylesheet" href="{% static 'fonts/font-slider.css'%}" type="text/css">
+
+	<!-- jQuery and Modernizr-->
+	<script src="{% static 'js/jquery-2.1.1.js'%}"></script>
+
+	<!-- Core JavaScript Files -->
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="{% static 'js/html5shiv.js'%}"></script>
+        <script src="{% static 'js/respond.min.js'%}"></script>
+    <![endif]-->
+</head>
+
+<body>
+	<!--Top-->
+	<nav id="top">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6">
+
+
+				</div>
+				<div class="col-xs-6">
+					<ul class="top-link">
+						<li><a href="/myapp/login/"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+						<li><a href="/myapp/contact/"><span class="glyphicon glyphicon-envelope"></span> Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!--Header-->
+	<header class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div id="logo"><img src="{% static 'images/logo.png'%}" /></div>
+			</div>
+			<div class="col-md-4">
+				<form method="post" action="/myapp/search/" class="form-search">
+                {% csrf_token %}
+                <br>
+                <input type="text" name="sr" class="input-medium search-query" placeholder="Enter Message to Search">
+                <button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>
+                <br>
+            {% if messages %}
+                {% for m in messages %}
+                    {{ m }}
+                {% endfor %}
+            {% endif %}
+            </form>
+			</div>
+			<div class="col-md-4">
+				<div id="cart"><a class="btn btn-1" href="/myapp/cart/"><span class="glyphicon glyphicon-shopping-cart"></span>CART</a></div>
+			</div>
+		</div>
+	</header>
+	<!--Navigation-->
+    <nav id="menu" class="navbar">
+		<div class="container">
+			<div class="navbar-header"><span id="heading" class="visible-xs">Categories</span>
+			  <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+			</div>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/myapp/index/">Home</a></li>
+					<li><a href="/myapp/about/">About Us</a></li>
+					<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Products</a>
+						<div class="dropdown-menu">
+							<div class="dropdown-inner">
+								<ul class="list-unstyled">
+									<li><a href="/myapp/shop/Mobile">Sports</a></li>
+									<li><a href="/myapp/shop/Accessories">Sneakers</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<!--//////////////////////////////////////////////////-->
+	<!--///////////////////HomePage///////////////////////-->
+	<!--//////////////////////////////////////////////////-->
+	<div id="page-content" class="home-page">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<!-- Carousel -->
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<!-- Indicators -->
+						<ol class="carousel-indicators hidden-xs">
+							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="1"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="2"></li>
+						</ol>
+						<!-- Wrapper for slides -->
+						<div class="carousel-inner">
+							<div class="item active">
+								<img src="{%  static 'images/main-banner1-1903x600.jpg'%}" alt="First slide">
+								<!-- Static Header -->
+								<div class="header-text hidden-xs">
+									<div class="col-md-12 text-center">
+									</div>
+								</div><!-- /header-text -->
+							</div>
+							<div class="item">
+								<img src="{%  static 'images/main-banner2-1903x600.jpg'%}" alt="Second slide">
+								<!-- Static Header -->
+								<div class="header-text hidden-xs">
+									<div class="col-md-12 text-center">
+									</div>
+								</div><!-- /header-text -->
+							</div>
+							<div class="item">
+								<img src="{%  static 'images/main-banner3-1903x600.jpg'%}" alt="Third slide">
+								<!-- Static Header -->
+								<div class="header-text hidden-xs">
+									<div class="col-md-12 text-center">
+									</div>
+								</div><!-- /header-text -->
+							</div>
+						</div>
+						<!-- Controls -->
+						<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+						<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					</div><!-- /carousel -->
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="heading"><h2>SPECIAL PRODUCTS</h2></div>
+					<div class="products">
+						<div class="col-lg-12">
+							<div class="product">
+								<div class="image"><a href="/myapp/product/53"><img src="{% static 'images/nike-vapormax.jpeg'%}" /></a></div>
+								<div class="buttons">
+									<a class="btn cart" href="/myapp/product/53"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+								</div>
+								<div class="caption">
+									<div class="name"><h3><a href="product.html">Nike Air Vapormax</a></h3></div>
+									<div class="price">17,990</div>
+									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="product">
+								<div class="image"><a href="/myapp/product/54"><img src="{% static 'images/nike_air_max_plus'%}" /></a></div>
+								<div class="buttons">
+									<a class="btn cart" href="/myapp/product/54"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+								</div>
+								<div class="caption">
+									<div class="name"><h3><a href="/myapp/product/">Nike Airmax Plus</a></h3></div>
+									<div class="price">15,995</div>
+									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="product">
+								<div class="image"><a href="/myapp/product/56"><img src="{% static 'images/vans-oldschool.jpeg'%}" /></a></div>
+								<div class="buttons">
+									<a class="btn cart" href="/myapp/product/56"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+								</div>
+								<div class="caption">
+									<div class="name"><h3><a href="/myapp/product/">Vans Old School</a></h3></div>
+									<div class="price">4,350</div>
+									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-12">
+							<div class="product">
+								<div class="image"><a href="/myapp/product/55"><img src="{% static 'images/stansmith.jpeg'%}" /></a></div>
+								<div class="buttons">
+									<a class="btn cart" href="/myapp/product/55"><span class="glyphicon glyphicon-shopping-cart"></span></a>
+								</div>
+								<div class="caption">
+									<div class="name"><h3><a href="/myapp/product/">Adidas Stan Smith</a></h3></div>
+									<div class="price">5500</div>
+									<div class="rating"><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="container">
+			<div class="wrap-footer">
+				<div class="row">
+					<div class="col-md-3 col-footer footer-1">
+						<img src="{%  static 'images/logofooter.png'%}" />
+						<p>Dappers Shoes Online Shop is a one stop shop to buy products at best prices with lucrative offers. With Dappers Shoes, we intend to enhance your online shopping experience complimented with security of your investment.</p>
+					</div>
+					<div class="col-md-3 col-footer footer-2">
+						<div class="heading"><h4>Customer Service</h4></div>
+						<ul>
+							<li><a href="/myapp/about/">About Us</a></li>
+							<li><a href="/myapp/contact/">Contact Us</a></li>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+						</ul>
+					</div>
+					<div class="col-md-3 col-footer footer-3">
+						<div class="heading"><h4>My Account</h4></div>
+						<ul>
+							<li><a href="/myapp/login/">My Account</a></li>
+							<li><a href="/myapp/shop/">Products</a></li>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+						</ul>
+					</div>
+					<div class="col-md-3 col-footer footer-4">
+						<div class="heading"><h4>Contact Us</h4></div>
+						<ul>
+							<li><span class="glyphicon glyphicon-home"></span>What Your's</li>
+							<li><span class="glyphicon glyphicon-earphone"></span>**********</li>
+							<li><span class="glyphicon glyphicon-envelope"></span>dash@gmail.com</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+                    <div class="col-md-6">
+					</div>
+					<div class="col-md-6">
+						<div class="pull-right">
+							<ul>
+								<li><img src="{% static 'images/visa-curved-32px.png'%}" /></li>
+								<li><img src="{% static 'images/paypal-curved-32px.png'%}" /></li>
+								<li><img src="{% static 'images/discover-curved-32px.png'%}" /></li>
+								<li><img src="{% static 'images/maestro-curved-32px.png'%}" /></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
